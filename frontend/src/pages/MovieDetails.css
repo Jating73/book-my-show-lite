@@ -1,0 +1,174 @@
+/* MovieDetails.css */
+
+.movie-details-page {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    color: #333;
+}
+
+.movie-banner {
+    display: flex;
+    background-color: #000;
+    color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.banner-content {
+    padding: 20px;
+    flex: 1;
+}
+
+.movie-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.movie-rating {
+    font-size: 18px;
+    color: #ff9800;
+    margin-bottom: 10px;
+}
+
+.movie-languages,
+.movie-genres {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.book-tickets-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff1744;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.book-tickets-btn:hover {
+    background-color: #d50000;
+}
+
+.movie-poster {
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.movie-poster img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.movie-info-section {
+    margin-bottom: 40px;
+}
+
+.movie-info-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.cast-crew-section {
+    margin-bottom: 40px;
+}
+
+.cast-crew-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.cast-list,
+.crew-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.cast-member,
+.crew-member {
+    text-align: center;
+    width: 120px;
+}
+
+.cast-member img,
+.crew-member img {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.cast-name,
+.crew-name {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.cast-role,
+.crew-role {
+    font-size: 12px;
+    color: #777;
+}
+
+.reviews-section {
+    margin-bottom: 40px;
+}
+
+.reviews-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.review-summary {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.review-tags {
+    margin-bottom: 20px;
+}
+
+.tag {
+    background-color: #efefef;
+    color: #333;
+    border-radius: 15px;
+    padding: 5px 10px;
+    font-size: 12px;
+    margin-right: 10px;
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.review {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.review-user {
+    font-weight: bold;
+}
+
+.review-rating {
+    font-size: 14px;
+    color: #ff9800;
+}
+
+.review-text {
+    font-size: 14px;
+    color: #555;
+}

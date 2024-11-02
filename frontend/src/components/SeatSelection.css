@@ -1,0 +1,105 @@
+/* ScheduleSelection */
+.schedule-list {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.schedule-btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.schedule-btn.selected {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+.schedule-btn:hover {
+    background-color: #ddd;
+}
+
+/* SeatSelection */
+.seat-selection {
+    padding: 20px;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    /* Full height of the viewport */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center the entire content horizontally */
+}
+
+.seat-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center the seat rows horizontally */
+    justify-content: center;
+    /* Center the seat rows within this container */
+}
+
+.seat-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.row-label {
+    width: 30px;
+    font-weight: bold;
+    margin-right: 10px;
+    /* Space between row label and seats */
+}
+
+.seat-group {
+    display: flex;
+    margin-right: 20px;
+    /* Space between seat groups */
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    background-color: #d3d3d3;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: background-color 0.3s;
+}
+
+.seat.occupied {
+    background-color: #ff4d4d;
+    /* Red for occupied */
+    cursor: not-allowed;
+}
+
+.seat.selected {
+    background-color: #4caf50;
+    /* Green for selected */
+}
+
+.book-now {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.book-now:hover {
+    background-color: #0056b3;
+}
