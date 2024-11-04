@@ -1,20 +1,20 @@
-/* Home.css */
-
-.home {
-    padding: 20px;
-    background-color: #f5f5f5;
-    min-height: 100vh;
-}
-
-.home h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.movie-list {
+.home-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+}
+
+.movies-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.tags {
+    margin-bottom: 20px;
+}
+
+.tags span {
+    display: inline-block;
+    background-color: #f5f5f5;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 5px;
 }

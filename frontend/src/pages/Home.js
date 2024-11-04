@@ -3,26 +3,25 @@ import axios from 'axios';
 import './Home.css';
 
 // Components
-import MovieCard from '../components/MovieCard';
+import MovieList from '../components/MovieList';
+import FilterSidebar from '../components/FilterSideBar';
 
-// Dummy data
-import moviesData from '../data/movies.json'
+
+// import moviesData from '../data/movies.json'
 
 const Home = () => {
-    const [movies, setMovies] = useState(moviesData);
+    const [movies, setMovies] = useState([]);
 
-    // useEffect(() => {
-    //     // Fetch movie data from an API
-    //     axios.get('/api/movies').then(response => setMovies(response.data));
-    // }, []);
+    useEffect(() => {
+        axios.get('/api/movies').then(response => setMovies(response.data));
+    }, []);
 
     return (
-        <div className="home">
-            <h1>Now Showing</h1>
-            <div className="movie-list">
-                {movies.map(movie => (
-                    <MovieCard key={movie.id} movie={movie} />
-                ))}
+        <div className="home-container">
+            <FilterSidebar />
+            <div className="movies-section">
+                <h2>Movies In Cinema</h2>
+                <MovieList movies={movies} />
             </div>
         </div>
     );

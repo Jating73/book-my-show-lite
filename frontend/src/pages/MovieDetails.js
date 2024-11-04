@@ -1,7 +1,8 @@
 // MovieDetails.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import moviesData from '../data/movies.json'; // Import the JSON file
+// import moviesData from '../data/movies.json';
 import './MovieDetails.css';
 
 // Components
@@ -12,9 +13,29 @@ import CrewList from '../components/CrewList';
 
 const MovieDetails = () => {
     const { id } = useParams();
-    const movieId = parseInt(id, 10); // Convert id to a number
-    const movie = moviesData.find(movie => movie.id === movieId); // Find the movie by id
+    const movieId = id;
+    const [movie, setMovie] = useState(null); // State to hold movie data
+    const [loading, setLoading] = useState(true); // State to handle loading
+    const [error, setError] = useState(null); // State to handle errors
     const [showSeatSelection, setShowSeatSelection] = useState(false); // State to toggle seat selection
+
+    useEffect(() => {
+        const fetchMovie = async () => {
+            try {
+                const response = await axios.get(`/api/movies/${movieId}`);
+                setMovie(response.data);
+            } catch (err) {
+                setError('Failed to load movie data');
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchMovie();
+    }, [movieId]);
+
+    if (loading) return <div>Loading...</div>;
+    if (error) return <div>{error}</div>;
 
     if (!movie) return <div>Movie not found!</div>;
 
@@ -71,7 +92,7 @@ const MovieDetails = () => {
                     </div>
                 </>
             ) : (
-                <SeatSelection movieId={movieId} />
+                <SeatSelection movie={movie} />
             )}
 
         </div>

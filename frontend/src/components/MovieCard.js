@@ -4,13 +4,15 @@ import './MovieCard.css';
 
 const MovieCard = ({ movie }) => {
     return (
-        <div className="movie-card">
-            <img src={movie.image} alt={movie.title} />
-            <div className="movie-info">
-                <h3>{movie.title}</h3>
-                <Link to={`/movies/${movie.id}`}>View Details</Link>
+        <Link to={`/movies/${movie._id}`}>
+            <div className="movie-card">
+                <img src={movie.image} alt={movie.title} className="movie-poster" />
+                <div className="movie-details">
+                    <h3>{movie.title}</h3>
+                    <p>{movie.language}</p>
+                </div>
             </div>
-        </div>
+        </Link>
     );
 };
 

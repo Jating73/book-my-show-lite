@@ -1,10 +1,9 @@
 // SeatSelection.js
 import React, { useState } from 'react';
-import moviesData from '../data/movies.json';
+
 import './SeatSelection.css';
 
-const SeatSelection = ({ movieId }) => {
-  const movie = moviesData.find(movie => movie.id === movieId);
+const SeatSelection = ({ movie = {} }) => {
 
   const availableSchedules = ['10:00 AM', '1:00 PM', '4:00 PM', '7:00 PM', '10:00 PM'];
 
@@ -45,7 +44,7 @@ const SeatSelection = ({ movieId }) => {
 
   return (
     <div className="seat-selection">
-      <h1>Select Seats for {movie.title}</h1>
+      <h1>Select Seats for: {movie.title}</h1>
       {!showSeatLayout ? (
         <>
           <h2>Choose a time schedule</h2>
